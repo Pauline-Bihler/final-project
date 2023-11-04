@@ -7,7 +7,7 @@ export function MeetOurDoggiesButton() {
   const router = useRouter();
 
   const viewAll = async () => {
-    await router.push('./animals/dogs/');
+    await router.push('dogs/');
   };
 
   return (

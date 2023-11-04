@@ -37,10 +37,18 @@ export default function AnimalsPage() {
         </div>
       </div>
       <br />
-      <div>
+      <div className={styles['centeredContainer']}>
         <img src="/images/phil.jpg" alt="brown-dog" width={250} height={350} />
-        <MeetOurDoggiesButton />
+        <div className={styles['meetDoggiesContainer']}>
+          <MeetOurDoggiesButton />
+        </div>
       </div>
+      {/* <div　className={styles['centeredContainer']}>
+        <img src="/images/phil.jpg" alt="brown-dog" width={250} height={350} />
+        <div className={styles['meetKittiesDoggiesContainer']}
+         <MeetOurDoggiesButton />
+        </div>
+      </div> */}
       {/* <img
               src={`/images/${goody.goodyName}.jpg`}
               alt={goody.goodyName}
