@@ -1,0 +1,18 @@
+body {
+  /* background-color: oldlace; */
+  background-color: whitesmoke;
+  color: rgb(53, 28, 79);
+}
+
+.navHeader {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navHeader li {
+  display: inline;
+  margin-right: 10px;
+}
