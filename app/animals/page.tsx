@@ -4,7 +4,7 @@ import { MeetOurKittiesButton } from './MeetOurKitties';
 import styles from './page.module.scss';
 
 export const metadata: Metadata = {
-  title: 'Animals |',
+  title: 'Animals | Kitties & Doggos of Austria',
   description: 'Adopt & support animals in need',
 };
 

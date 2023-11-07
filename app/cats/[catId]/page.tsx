@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getCat } from '../../../database/cats';
+import { AdoptMeButton } from './AdoptMeButton';
 
 type GenerateMetadataProps = {
   params: {
@@ -32,6 +33,7 @@ export default function CatPage(props) {
         width={250}
         height={350}
       />
+      <AdoptMeButton />
     </div>
   );
 }

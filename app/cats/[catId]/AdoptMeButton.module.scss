@@ -1,0 +1,19 @@
+.centeredContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adoptMeButton {
+  background-color: rebeccapurple;
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #c2aace;
+  }
+}

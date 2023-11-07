@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import { getDogs } from '../../database/dogs';
 
+export const metadata: Metadata = {
+  title: 'Doggies | Kitties & Doggos of Austria',
+  description: 'Adopt & support animals in need',
+};
+
 export default function DogsPage() {
   const dogs = getDogs();
   return (

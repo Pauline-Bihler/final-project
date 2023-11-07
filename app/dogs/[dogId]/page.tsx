@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getDog } from '../../../database/dogs';
+import { AdoptMeButton } from '../../cats/[catId]/AdoptMeButton';
+import { TakeMeOutForAWalkButton } from './TakeMeOutForAWalkButton';
 
 type GenerateMetadataProps = {
   params: {
@@ -32,6 +34,8 @@ export default function DogPage(props) {
         width={250}
         height={350}
       />
+      <AdoptMeButton />
+      <TakeMeOutForAWalkButton />
     </div>
   );
 }
