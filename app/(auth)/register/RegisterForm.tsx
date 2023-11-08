@@ -6,6 +6,10 @@ import { useState } from 'react';
 export default function RegisterForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [age, setAge] = useState(0);
 
   async function handleRegister(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -14,6 +18,10 @@ export default function RegisterForm() {
       body: JSON.stringify({
         username,
         password,
+        email,
+        firstName,
+        lastName,
+        age,
       }),
     });
     const data = response.json();
@@ -32,6 +40,24 @@ export default function RegisterForm() {
           type="password"
           onChange={(event) => setPassword(event.currentTarget.value)}
         />{' '}
+      </label>
+      <label>
+        Email{' '}
+        <input onChange={(event) => setEmail(event.currentTarget.value)} />{' '}
+      </label>
+      <label>
+        First name{' '}
+        <input onChange={(event) => setFirstName(event.currentTarget.value)} />{' '}
+      </label>
+      <label>
+        Last name{' '}
+        <input onChange={(event) => setLastName(event.currentTarget.value)} />{' '}
+      </label>
+      <label>
+        Age
+        <input
+          onChange={(event) => setAge(parseInt(event.currentTarget.value))}
+        />
       </label>
       <button>Register</button>
     </form>

@@ -1,29 +1,61 @@
 import { cache } from 'react';
 import { User } from '../migrations/00000-createTableusers';
-import { sql } from '../util/connect';
+import { sql } from './connect';
 
 export type UserWithPasswordHash = User & {
   passwordHash: string;
 };
 
 export const createUser = cache(
-  async (username: string, passwordHash: string, email: string) => {
+  async (
+    username: string,
+    passwordHash: string,
+    email: string,
+    firstName: string,
+    lastName: string,
+    age: number,
+  ) => {
+    // console.log(username, firstName);
     const [user] = await sql<User[]>`
       INSERT INTO
         users (
           username,
           password_hash,
-          email
+          email,
+          first_name,
+          last_name,
+          age
         )
       VALUES
         (
           ${username},
           ${passwordHash},
-          ${email}
-        ) RETURNING id,
+          ${email},
+          ${firstName},
+          ${lastName},
+          ${age}
+        )
+        RETURNING
+        id,
         username,
-        email
+        email,
+        first_name,
+        last_name,
+        age
     `;
     return user;
   },
 );
+
+export const getUserByUsername = cache(async (username: string) => {
+  const [user] = await sql<User[]>`
+    SELECT
+      id,
+      username
+    FROM
+      users
+    WHERE
+      username = ${username}
+  `;
+  return user;
+});
