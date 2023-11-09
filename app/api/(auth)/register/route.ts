@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { createUser, getUserByUsername } from '../../../../database/users';
 import { User } from '../../../../migrations/00000-createTableusers';
 
-console.log('route active');
+// console.log('route active');
 
 const registerSchema = z.object({
   username: z.string().min(3),

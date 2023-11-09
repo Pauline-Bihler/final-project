@@ -17,10 +17,10 @@ export async function up(sql: Sql) {
         id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
         username VARCHAR(80) NOT NULL UNIQUE,
         password_hash VARCHAR(100) NOT NULL,
-        first_name VARCHAR(100) NOT NULL,
-        last_name VARCHAR(100) NOT NULL,
-        email VARCHAR(100) NOT NULL,
-        age INTEGER NOT NULL
+        first_name VARCHAR(100),
+        last_name VARCHAR(100),
+        email VARCHAR(100),
+        age INTEGER
       );
   `;
 }

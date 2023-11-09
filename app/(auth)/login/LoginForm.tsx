@@ -1,34 +1,32 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { RegisterResponseBodyPost } from '../../api/(auth)/register/route';
+import { LoginResponseBodyPost } from '../../api/(auth)/login/route';
 
-// ('user client');
-
-export default function RegisterForm() {
+export default function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [age, setAge] = useState(0);
+  // const [email, setEmail] = useState('');
+  // const [firstName, setFirstName] = useState('');
+  // const [lastName, setLastName] = useState('');
+  // const [age, setAge] = useState(0);
   const [errors, setErrors] = useState<{ message: string }[]>([]);
   const router = useRouter();
 
   async function handleRegister(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const response = await fetch('/api/register', {
+    const response = await fetch('/api/login', {
       method: 'POST',
       body: JSON.stringify({
         username,
         password,
-        email,
-        firstName,
-        lastName,
-        age,
+        // email,
+        // firstName,
+        // lastName,
+        // age,
       }),
     });
-    const data: RegisterResponseBodyPost = await response.json();
+    const data: LoginResponseBodyPost = await response.json();
 
     if ('errors' in data) {
       setErrors(data.errors);
@@ -51,11 +49,9 @@ export default function RegisterForm() {
           onChange={(event) => setPassword(event.currentTarget.value)}
         />{' '}
       </label>
-      <label>
+      {/* <label>
         Email{' '}
-        <input
-        type="email"
-        onChange={(event) => setEmail(event.currentTarget.value)} />{' '}
+        <input onChange={(event) => setEmail(event.currentTarget.value)} />{' '}
       </label>
       <label>
         First name{' '}
@@ -70,8 +66,8 @@ export default function RegisterForm() {
         <input
           onChange={(event) => setAge(parseInt(event.currentTarget.value))}
         />
-      </label>
-      <button>Register</button>
+      </label> */}
+      <button>Log-in</button>
 
       {errors.map((error) => (
         <div className="error" key={`error-${error.message}`}>

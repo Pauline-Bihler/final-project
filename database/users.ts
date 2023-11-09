@@ -28,15 +28,13 @@ export const createUser = cache(
         )
       VALUES
         (
-          ${username},
+          ${username.toLowerCase()},
           ${passwordHash},
           ${email},
           ${firstName},
           ${lastName},
           ${age}
-        )
-        RETURNING
-        id,
+        ) RETURNING id,
         username,
         email,
         first_name,
@@ -51,11 +49,28 @@ export const getUserByUsername = cache(async (username: string) => {
   const [user] = await sql<User[]>`
     SELECT
       id,
-      username
+      username,
+      password_hash
     FROM
       users
     WHERE
-      username = ${username}
+      username = ${username.toLowerCase()}
   `;
   return user;
 });
+
+export const getUserWithPasswordHashByUsername = cache(
+  async (username: string) => {
+    const [user] = await sql<UserWithPasswordHash[]>`
+      SELECT
+        id,
+        username,
+        password_hash
+      FROM
+        users
+      WHERE
+        username = ${username.toLowerCase()}
+    `;
+    return user;
+  },
+);
