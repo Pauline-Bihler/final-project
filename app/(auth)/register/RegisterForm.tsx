@@ -35,7 +35,7 @@ export default function RegisterForm() {
       return;
     }
     // console.log('Check:', data);
-    router.push('/');
+    router.push(`/profile/${data.user.username}`);
   }
 
   return (
@@ -54,8 +54,9 @@ export default function RegisterForm() {
       <label>
         Email{' '}
         <input
-        type="email"
-        onChange={(event) => setEmail(event.currentTarget.value)} />{' '}
+          type="email"
+          onChange={(event) => setEmail(event.currentTarget.value)}
+        />{' '}
       </label>
       <label>
         First name{' '}
