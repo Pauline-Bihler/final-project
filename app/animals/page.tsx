@@ -11,7 +11,19 @@ export const metadata: Metadata = {
 export default function AnimalsPage() {
   return (
     <div>
-      <h1 className={styles['h1']}>Welcome to our animals page ♥</h1>
+      <div className={styles['text']}>
+        <h1>Welcome to our animals page ♥</h1>
+        <p>
+          Explore our current lineup of adorable animals waiting to find their
+          forever homes at our shelter.
+          <br />
+          If you haven't found the perfect companion here, don't hesitate to
+          reach out to us.
+          <br />
+          We're here to help you discover the ideal furry friend for your
+          family.
+        </p>
+      </div>
       <br />
       <div className={styles['centeredContainer']}>
         <div className={styles['imageContainer']}>
