@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Thank you | Kitties & Doggos of Austria',
+  title: 'Thank you | Kitties & Doggies of Austria',
   description: 'Adopt & support animals in need',
 };
 

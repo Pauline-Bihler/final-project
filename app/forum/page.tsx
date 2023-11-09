@@ -1,9 +1,8 @@
 import styles from './forum.module.scss';
 
 export const metadata = {
-  title: 'Forum |',
-  description:
-    'Your resident manga merch dealer. All goodies are authentic and from Japan.',
+  title: 'Forum | Kitties & Doggies of Graz',
+  description: 'Adopt & support animals in need',
 };
 
 export default function ForumPage() {

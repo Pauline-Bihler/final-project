@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { getCats } from '../../database/cats';
 
 export const metadata: Metadata = {
-  title: 'Kitties | Kitties & Doggos of Austria',
+  title: 'Kitties | Kitties & Doggies of Graz',
   description: 'Adopt & support animals in need',
 };
 

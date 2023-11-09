@@ -1,7 +1,7 @@
 import AdoptMeForm from './AdoptMeForm';
 
 export const metadata = {
-  title: 'Adopt Me Form |Kitties & Doggos of Austria',
+  title: 'Adopt Me Form |Kitties & Doggies of Graz',
   description: 'Adopt & support animals in need',
 };
 
