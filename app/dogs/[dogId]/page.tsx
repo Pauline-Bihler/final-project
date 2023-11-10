@@ -35,6 +35,7 @@ export default function DogPage(props) {
         height={350}
       />
       <AdoptMeButton />
+      <br />
       <TakeMeOutForAWalkButton />
     </div>
   );
