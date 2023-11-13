@@ -108,7 +108,7 @@ export async function POST(
   }
 
   // 4.3 Send the new cookie in the headers
-  console.log('Session: ', session);
+  // console.log('Session: ', session);
 
   // cookies().set({
   //   name: 'sessionToken',
