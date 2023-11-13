@@ -36,6 +36,10 @@ export default function RegisterForm() {
     }
     // console.log('Check:', data);
     router.push(`/profile/${data.user.username}`);
+
+    // revalidatePath() throws unnecessary error, will be used when stable
+    // revalidatePath('/(auth)/register')
+    router.refresh();
   }
 
   return (

@@ -1,7 +1,10 @@
 import './globals.scss';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { cookies } from 'next/headers';
 import Link from 'next/link';
+import { ReactNode } from 'react';
+import { getUserBySessionToken } from '../database/users';
 import LogoutButton from './(auth)/logout/LogoutButton';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -11,11 +14,27 @@ export const metadata: Metadata = {
   description: 'Adopt & support animals in need',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+type Props = {
+  children: ReactNode;
+};
+
+export default async function RootLayout(props: Props) {
+  // Task: Display the logged in user's username in the navigation bar and hide the login and register links depending on whether the user is logged in or not
+  // 1. Checking if the sessionToken cookie exists
+  // 2. Get the current logged in user from the database using the sessionToken value
+  // 3. Make decision whether to show the login and register links or not
+
+  // 1. Checking if the sessionToken cookie exists
+  const cookieStore = cookies();
+  const sessionToken = cookieStore.get('sessionToken');
+
+  // console.log('Sessions: ', sessionToken);
+
+  const user =
+    sessionToken && (await getUserBySessionToken(sessionToken.value));
+
+  // console.log('Sessions: ', user);
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -35,8 +54,6 @@ export default function RootLayout({
                     Animals
                   </Link>
                 </li>
-              </ul>
-              <ul>
                 <li>
                   <Link data-test-id="cart-link" href="/help">
                     Help us
@@ -46,18 +63,45 @@ export default function RootLayout({
                   <Link href="/forum">Forum</Link>
                 </li>
                 <li>
+                  <Link href="/animals-admin">Admin</Link>
+                </li>
+              </ul>
+            </nav>
+            {/* <ul>
+                <li>
                   <Link href="/register">Register</Link>
                 </li>
                 <li>
                   <Link href="/login">Log-in</Link>
                 </li>
-              </ul>
+              </ul> */}
 
-              <LogoutButton />
-            </nav>
+            <div className="navHeader">
+              {user ? (
+                <>
+                  <div>Hi {user.username}, so happy you're back!</div>
+                  <LogoutButton />
+                </>
+              ) : (
+                // <>
+                //   <Link href="/register">Register</Link>
+                //   <Link href="/login">Login</Link>
+                // </>
+                <ul>
+                  <li>
+                    <Link href="/register">Register</Link>
+                  </li>
+                  <li>
+                    <Link href="/login">Log-in</Link>
+                  </li>
+                </ul>
+              )}
+            </div>
+            {/* <LogoutButton /> */}
+            {/* </nav> */}
           </header>
         </div>
-        {children}
+        {props.children}
       </body>
     </html>
   );
