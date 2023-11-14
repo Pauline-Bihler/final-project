@@ -2,8 +2,8 @@ import { Sql } from 'postgres';
 
 export type User = {
   id: number;
-  username: string;
-  passwordHash: string;
+  username: string | null;
+  passwordHash: string | null;
   firstName: string;
   lastName: string;
   email: string;

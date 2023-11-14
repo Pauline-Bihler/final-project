@@ -9,7 +9,7 @@ export function TakeMeOutForAWalkButton() {
   const router = useRouter();
 
   const viewAll = async () => {
-    await router.push('../takeMeOutForAWalk/');
+    await router.push('/takeMeOutForAWalk');
   };
 
   return (

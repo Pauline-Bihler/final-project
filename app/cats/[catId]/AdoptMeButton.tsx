@@ -6,8 +6,8 @@ import styles from './AdoptMeButton.module.scss';
 export function AdoptMeButton() {
   const router = useRouter();
 
-  const viewAll = async () => {
-    await router.push('../adoptMe/');
+  const adoptMe = async () => {
+    await router.push('/adoptMe');
   };
 
   return (
@@ -15,7 +15,7 @@ export function AdoptMeButton() {
       <button
         className={styles['adoptMeButton']}
         type="button"
-        onClick={viewAll}
+        onClick={adoptMe}
       >
         Adopt Me ♥
       </button>
