@@ -2,12 +2,12 @@ import { Sql } from 'postgres';
 
 export type User = {
   id: number;
-  username: string | null;
-  passwordHash: string | null;
-  firstName: string;
-  lastName: string;
-  email: string;
-  age: number;
+  username: string;
+  // passwordHash: string;
+  firstName: string | null;
+  lastName: string | null;
+  email: string | null;
+  age: number | null;
 };
 
 export async function up(sql: Sql) {

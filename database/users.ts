@@ -46,7 +46,9 @@ export const createUser = cache(
 );
 
 export const getUserByUsername = cache(async (username: string) => {
-  const [user] = await sql<User[]>`
+  const [user] = await sql<
+    { id: number; username: string; passwordHash: string }[]
+  >`
     SELECT
       id,
       username,
@@ -61,7 +63,9 @@ export const getUserByUsername = cache(async (username: string) => {
 
 export const getUserWithPasswordHashByUsername = cache(
   async (username: string) => {
-    const [user] = await sql<UserWithPasswordHash[]>`
+    const [user] = await sql<
+      { id: number; username: string; passwordHash: string }[]
+    >`
       SELECT
         id,
         username,
@@ -76,7 +80,7 @@ export const getUserWithPasswordHashByUsername = cache(
 );
 
 export const getUserBySessionToken = cache(async (token: string) => {
-  const [user] = await sql<User[]>`
+  const [user] = await sql<{ id: number; username: string }[]>`
     SELECT
       users.id,
       users.username
