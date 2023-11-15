@@ -42,3 +42,19 @@ a {
 .error {
   color: red;
 }
+
+@media screen and (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  .container {
+    padding: 10px;
+  }
+
+  .navHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navHeader li {
+    margin: 0;
+  }
+}
