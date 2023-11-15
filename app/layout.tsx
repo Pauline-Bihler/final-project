@@ -35,10 +35,80 @@ export default async function RootLayout(props: Props) {
 
   // console.log('Sessions: ', user);
 
+  //   return (
+  //     <html lang="en">
+  //       <body className={inter.className}>
+  //         <div className="navContainer">
+  //           <header>
+  //             <nav className="navHeader">
+  //               <ul>
+  //                 <li>
+  //                   <Link href="/">Home</Link>
+  //                 </li>
+  //                 <li>
+  //                   <Link href="/about">About</Link>
+  //                 </li>
+  //                 <li>
+  //                   <Link data-test-id="products-link" href="/animals">
+  //                     Animals
+  //                   </Link>
+  //                 </li>
+  //                 <li>
+  //                   <Link data-test-id="cart-link" href="/help">
+  //                     Help us
+  //                   </Link>
+  //                 </li>
+  //                 <li>
+  //                   <Link href="/forum">Forum</Link>
+  //                 </li>
+  //                 <li>
+  //                   <Link href="/animals-admin">Admin</Link>
+  //                 </li>
+  //               </ul>
+  //             </nav>
+  //             {/* <ul>
+  //                 <li>
+  //                   <Link href="/register">Register</Link>
+  //                 </li>
+  //                 <li>
+  //                   <Link href="/login">Log-in</Link>
+  //                 </li>
+  //               </ul> */}
+
+  //             <div className="navHeader">
+  //               {user ? (
+  //                 <>
+  //                   <div>Hi {user.username}, so happy you're back!</div>
+  //                   <LogoutButton />
+  //                 </>
+  //               ) : (
+  //                 // <>
+  //                 //   <Link href="/register">Register</Link>
+  //                 //   <Link href="/login">Login</Link>
+  //                 // </>
+  //                 <ul>
+  //                   <li>
+  //                     <Link href="/register">Register</Link>
+  //                   </li>
+  //                   <li>
+  //                     <Link href="/login">Log-in</Link>
+  //                   </li>
+  //                 </ul>
+  //               )}
+  //             </div>
+  //             {/* <LogoutButton /> */}
+  //             {/* </nav> */}
+  //           </header>
+  //         </div>
+  //         {props.children}
+  //       </body>
+  //     </html>
+  //   );
+  // }
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <h1>Layout title</h1> */}
         <div className="navContainer">
           <header>
             <nav className="navHeader">
@@ -66,39 +136,25 @@ export default async function RootLayout(props: Props) {
                   <Link href="/animals-admin">Admin</Link>
                 </li>
               </ul>
+              {/* Separate container for login/register/logout links */}
+              <div className="authLinks">
+                {user ? (
+                  <>
+                    <div>Hi {user.username}, so happy you're back!</div>
+                    <LogoutButton />
+                  </>
+                ) : (
+                  <ul>
+                    <li>
+                      <Link href="/register">Register</Link>
+                    </li>
+                    <li>
+                      <Link href="/login">Log-in</Link>
+                    </li>
+                  </ul>
+                )}
+              </div>
             </nav>
-            {/* <ul>
-                <li>
-                  <Link href="/register">Register</Link>
-                </li>
-                <li>
-                  <Link href="/login">Log-in</Link>
-                </li>
-              </ul> */}
-
-            <div className="navHeader">
-              {user ? (
-                <>
-                  <div>Hi {user.username}, so happy you're back!</div>
-                  <LogoutButton />
-                </>
-              ) : (
-                // <>
-                //   <Link href="/register">Register</Link>
-                //   <Link href="/login">Login</Link>
-                // </>
-                <ul>
-                  <li>
-                    <Link href="/register">Register</Link>
-                  </li>
-                  <li>
-                    <Link href="/login">Log-in</Link>
-                  </li>
-                </ul>
-              )}
-            </div>
-            {/* <LogoutButton /> */}
-            {/* </nav> */}
           </header>
         </div>
         {props.children}

@@ -21,6 +21,11 @@ export default function Home() {
         </h1>
       </div>
       <LearnMoreAboutUsButton />
+      <p className={styles['text']}>
+        Don't let the adoption process slow you down. We help you find your
+        perfect furry companion or facilitate the adoption paperwork in just 1
+        day, guaranteed.
+      </p>
     </main>
   );
 }
