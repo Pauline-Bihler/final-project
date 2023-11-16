@@ -8,11 +8,11 @@
 }
 
 .text {
-  margin-bottom: 20px; /* Adjust the margin as needed */
+  margin-bottom: 20px;
 }
 
 .form {
-  width: 300px; /* Adjust the width of the form box as needed */
+  width: 300px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -30,6 +30,7 @@
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 5px;
+  flex-direction: column;
 }
 
 .button {

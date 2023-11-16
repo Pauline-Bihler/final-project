@@ -11,7 +11,7 @@ export function AdoptMeSubmitButton() {
   };
 
   return (
-    <div className={styles['centeredContainer']}>
+    <div>
       <button
         className={styles['adoptMeSubmitButton']}
         type="button"

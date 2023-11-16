@@ -57,11 +57,15 @@ export default function LoginForm(props: Props) {
       >
         <label className={styles['label']}>
           Username{' '}
-          <input onChange={(event) => setUsername(event.currentTarget.value)} />{' '}
+          <input
+            onChange={(event) => setUsername(event.currentTarget.value)}
+            className={styles['input']}
+          />{' '}
         </label>
         <label className={styles['label']}>
           Password{' '}
           <input
+            className={styles['input']}
             type="password"
             onChange={(event) => setPassword(event.currentTarget.value)}
           />{' '}

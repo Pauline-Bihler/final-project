@@ -26,7 +26,6 @@ export default async function AdoptPage() {
 
   return (
     <div>
-
       <AdoptMeForm />
     </div>
   );
