@@ -6,6 +6,13 @@ export type UserWithPasswordHash = User & {
   passwordHash: string;
 };
 
+export type UserPost = {
+  postId: number;
+  textTitle: string;
+  textContent: string;
+  username: string;
+};
+
 export const createUser = cache(
   async (
     username: string,
@@ -93,4 +100,23 @@ export const getUserBySessionToken = cache(async (token: string) => {
       )
   `;
   return user;
+});
+
+export const getUserPostBySessionToken = cache(async (token: string) => {
+  const posts = await sql<UserPost[]>`
+    SELECT
+      posts.id AS post_id,
+      posts.text_title AS text_title,
+      posts.text_content AS text_content,
+      users.username AS username
+    FROM
+      posts
+      INNER JOIN users ON posts.user_id = users.id
+      INNER JOIN sessions ON (
+        sessions.token = ${token}
+        AND sessions.user_id = users.id
+        AND sessions.expiry_timestamp > now ()
+      )
+  `;
+  return posts;
 });
