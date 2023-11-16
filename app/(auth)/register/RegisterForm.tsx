@@ -2,6 +2,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { RegisterResponseBodyPost } from '../../api/(auth)/register/route';
+import styles from './RegisterForm.module.scss';
 
 // ('user client');
 
@@ -43,46 +44,80 @@ export default function RegisterForm() {
   }
 
   return (
-    <form onSubmit={async (event) => await handleRegister(event)}>
-      <label>
-        Username{' '}
-        <input onChange={(event) => setUsername(event.currentTarget.value)} />{' '}
-      </label>
-      <label>
-        Password{' '}
-        <input
-          type="password"
-          onChange={(event) => setPassword(event.currentTarget.value)}
-        />{' '}
-      </label>
-      <label>
-        Email{' '}
-        <input
-          type="email"
-          onChange={(event) => setEmail(event.currentTarget.value)}
-        />{' '}
-      </label>
-      <label>
-        First name{' '}
-        <input onChange={(event) => setFirstName(event.currentTarget.value)} />{' '}
-      </label>
-      <label>
-        Last name{' '}
-        <input onChange={(event) => setLastName(event.currentTarget.value)} />{' '}
-      </label>
-      <label>
-        Age
-        <input
-          onChange={(event) => setAge(parseInt(event.currentTarget.value))}
-        />
-      </label>
-      <button>Register</button>
-
-      {errors.map((error) => (
-        <div className="error" key={`error-${error.message}`}>
-          Error: {error.message}
+    <div className={styles['overall-container']}>
+      <h1 className={styles['text']}>Register to our website</h1>
+      <form
+        onSubmit={async (event) => await handleRegister(event)}
+        className={styles['form']}
+      >
+        <div>
+          <label className={styles['label']}>
+            Username{' '}
+            <input
+              onChange={(event) => setUsername(event.currentTarget.value)}
+              className={styles['input']}
+            />
+          </label>
         </div>
-      ))}
-    </form>
+        <div>
+          <label className={styles['label']}>
+            Password{' '}
+            <input
+              type="password"
+              onChange={(event) => setPassword(event.currentTarget.value)}
+              className={styles['input']}
+            />
+          </label>
+        </div>
+        <div>
+          <label className={styles['label']}>
+            Email{' '}
+            <input
+              type="email"
+              onChange={(event) => setEmail(event.currentTarget.value)}
+              className={styles['input']}
+            />
+          </label>
+        </div>
+        <div>
+          <label className={styles['label']}>
+            First name{' '}
+            <input
+              onChange={(event) => setFirstName(event.currentTarget.value)}
+              className={styles['input']}
+            />
+          </label>
+        </div>
+        <div>
+          <label className={styles['label']}>
+            Last name{' '}
+            <input
+              onChange={(event) => setLastName(event.currentTarget.value)}
+              className={styles['input']}
+            />
+          </label>
+        </div>
+        <div>
+          <label className={styles['label']}>
+            Age{' '}
+            <input
+              onChange={(event) =>
+                setAge(parseInt(event.currentTarget.value) || 0)
+              }
+              className={styles['input']}
+            />
+          </label>
+        </div>
+        <div className={styles['button']}>
+          <button>Register</button>
+        </div>
+
+        {errors.map((error) => (
+          <div className="error" key={`error-${error.message}`}>
+            Error: {error.message}
+          </div>
+        ))}
+      </form>
+    </div>
   );
 }

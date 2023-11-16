@@ -7,7 +7,7 @@ export function AdoptMeButton() {
   const router = useRouter();
 
   const adoptMe = async () => {
-    await router.push('/adoptMe');
+    await router.push('/adopt');
   };
 
   return (

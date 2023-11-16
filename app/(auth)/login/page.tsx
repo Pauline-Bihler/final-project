@@ -23,7 +23,6 @@ export default async function LoginPage({ searchParams }: Props) {
 
   return (
     <div>
-      <h2>Log-in</h2>
       <LoginForm returnTo={searchParams.returnTo} />
     </div>
   );

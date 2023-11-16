@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { getSafeReturnToPath } from '../../../util/validation';
 import { LoginResponseBodyPost } from '../../api/(auth)/login/route';
+import styles from './LoginForm.module.scss';
 
 type Props = { returnTo?: string | string[] };
 
@@ -48,19 +49,24 @@ export default function LoginForm(props: Props) {
   }
 
   return (
-    <form onSubmit={async (event) => await handleRegister(event)}>
-      <label>
-        Username{' '}
-        <input onChange={(event) => setUsername(event.currentTarget.value)} />{' '}
-      </label>
-      <label>
-        Password{' '}
-        <input
-          type="password"
-          onChange={(event) => setPassword(event.currentTarget.value)}
-        />{' '}
-      </label>
-      {/* <label>
+    <div className={styles['overall-container']}>
+      <h1 className={styles['text']}>Log-in</h1>
+      <form
+        onSubmit={async (event) => await handleRegister(event)}
+        className={styles['form']}
+      >
+        <label className={styles['label']}>
+          Username{' '}
+          <input onChange={(event) => setUsername(event.currentTarget.value)} />{' '}
+        </label>
+        <label className={styles['label']}>
+          Password{' '}
+          <input
+            type="password"
+            onChange={(event) => setPassword(event.currentTarget.value)}
+          />{' '}
+        </label>
+        {/* <label>
         Email{' '}
         <input onChange={(event) => setEmail(event.currentTarget.value)} />{' '}
       </label>
@@ -78,13 +84,16 @@ export default function LoginForm(props: Props) {
           onChange={(event) => setAge(parseInt(event.currentTarget.value))}
         />
       </label> */}
-      <button>Log-in</button>
-
-      {errors.map((error) => (
-        <div className="error" key={`error-${error.message}`}>
-          Error: {error.message}
+        <div className={styles['button']}>
+          <button>Log-in</button>
         </div>
-      ))}
-    </form>
+
+        {errors.map((error) => (
+          <div className="error" key={`error-${error.message}`}>
+            Error: {error.message}
+          </div>
+        ))}
+      </form>
+    </div>
   );
 }

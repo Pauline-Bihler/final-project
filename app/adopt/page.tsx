@@ -8,7 +8,7 @@ export const metadata = {
   description: 'Adopt & support animals in need',
 };
 
-export default async function AdoptMePage() {
+export default async function AdoptPage() {
   // Task: Add redirect to home if user is logged in
   // 1. Checking if the sessionToken cookie exists
   const sessionTokenCookie = cookies().get('sessionToken');
@@ -20,13 +20,13 @@ export default async function AdoptMePage() {
   //  Query your database to check if this user is admin
 
   // 3. If the sessionToken cookie is invalid or doesn't exist, redirect to login with returnTo
-  if (!session) redirect('/login?returnTo=/adoptMe');
+  if (!session) redirect('/login?returnTo=/adopt');
 
   // 4. If the sessionToken cookie is valid, allow access to admin page
 
   return (
     <div>
-      <h1>Adopt Me Form </h1>
+
       <AdoptMeForm />
     </div>
   );

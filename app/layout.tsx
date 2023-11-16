@@ -7,6 +7,8 @@ import { ReactNode } from 'react';
 import { getUserBySessionToken } from '../database/users';
 import LogoutButton from './(auth)/logout/LogoutButton';
 
+// import { ProfileButton } from './profile/[username]/ProfileButton';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -16,6 +18,7 @@ export const metadata: Metadata = {
 
 type Props = {
   children: ReactNode;
+  // params?: { username?: string };
 };
 
 export default async function RootLayout(props: Props) {
@@ -34,77 +37,6 @@ export default async function RootLayout(props: Props) {
     sessionToken && (await getUserBySessionToken(sessionToken.value));
 
   // console.log('Sessions: ', user);
-
-  //   return (
-  //     <html lang="en">
-  //       <body className={inter.className}>
-  //         <div className="navContainer">
-  //           <header>
-  //             <nav className="navHeader">
-  //               <ul>
-  //                 <li>
-  //                   <Link href="/">Home</Link>
-  //                 </li>
-  //                 <li>
-  //                   <Link href="/about">About</Link>
-  //                 </li>
-  //                 <li>
-  //                   <Link data-test-id="products-link" href="/animals">
-  //                     Animals
-  //                   </Link>
-  //                 </li>
-  //                 <li>
-  //                   <Link data-test-id="cart-link" href="/help">
-  //                     Help us
-  //                   </Link>
-  //                 </li>
-  //                 <li>
-  //                   <Link href="/forum">Forum</Link>
-  //                 </li>
-  //                 <li>
-  //                   <Link href="/animals-admin">Admin</Link>
-  //                 </li>
-  //               </ul>
-  //             </nav>
-  //             {/* <ul>
-  //                 <li>
-  //                   <Link href="/register">Register</Link>
-  //                 </li>
-  //                 <li>
-  //                   <Link href="/login">Log-in</Link>
-  //                 </li>
-  //               </ul> */}
-
-  //             <div className="navHeader">
-  //               {user ? (
-  //                 <>
-  //                   <div>Hi {user.username}, so happy you're back!</div>
-  //                   <LogoutButton />
-  //                 </>
-  //               ) : (
-  //                 // <>
-  //                 //   <Link href="/register">Register</Link>
-  //                 //   <Link href="/login">Login</Link>
-  //                 // </>
-  //                 <ul>
-  //                   <li>
-  //                     <Link href="/register">Register</Link>
-  //                   </li>
-  //                   <li>
-  //                     <Link href="/login">Log-in</Link>
-  //                   </li>
-  //                 </ul>
-  //               )}
-  //             </div>
-  //             {/* <LogoutButton /> */}
-  //             {/* </nav> */}
-  //           </header>
-  //         </div>
-  //         {props.children}
-  //       </body>
-  //     </html>
-  //   );
-  // }
 
   return (
     <html lang="en">
@@ -141,6 +73,7 @@ export default async function RootLayout(props: Props) {
                 {user ? (
                   <>
                     <div>Hi {user.username}, so happy you're back!</div>
+                    {/* <ProfileButton /> */}
                     <LogoutButton />
                   </>
                 ) : (

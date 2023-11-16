@@ -20,7 +20,6 @@ export default async function RegisterPage() {
   // 4. If the sessionToken cookie is invalid or doesn't exist, show the login form
   return (
     <div>
-      <h1>Register to our website</h1>
       <RegisterForm />
     </div>
   );
