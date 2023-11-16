@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import {
+  getAllUserPosts,
   getUserBySessionToken,
   getUserPostBySessionToken,
 } from '../../database/users';
@@ -29,9 +30,11 @@ export default async function ForumPage() {
   if (!user) redirect('/login?returnTo=/forum');
 
   // Display the posts for the current logged in user
-  const userPost = await getUserPostBySessionToken(sessionTokenCookie.value);
+  // const userPost = await getUserPostBySessionToken(sessionTokenCookie.value);
 
   // console.log('Checking: ', userPost);
+
+  const allUserPosts = await getAllUserPosts();
 
   return (
     <div>
@@ -47,15 +50,17 @@ export default async function ForumPage() {
         <br />
         <br />
         <div>
-          {userPost.length > 0 ? (
+          {allUserPosts.length > 0 ? (
             <>
-              <h2>Post from: {user.username}</h2>
+              <h2>All Posts</h2>
+
               <ul>
-                {userPost.map((post) => (
+                {allUserPosts.map((post) => (
                   <li key={`animal-div-${post.postId}`}>
                     {post.textTitle}
                     <br />
                     {post.textContent}
+                    <p>Posted by: {post.username}</p>
                   </li>
                 ))}
               </ul>

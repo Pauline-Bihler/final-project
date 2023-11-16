@@ -120,3 +120,17 @@ export const getUserPostBySessionToken = cache(async (token: string) => {
   `;
   return posts;
 });
+
+export const getAllUserPosts = cache(async () => {
+  const posts = await sql<UserPost[]>`
+    SELECT
+      posts.id AS post_id,
+      posts.text_title AS text_title,
+      posts.text_content AS text_content,
+      users.username AS username
+    FROM
+      posts
+      INNER JOIN users ON posts.user_id = users.id
+  `;
+  return posts;
+});
