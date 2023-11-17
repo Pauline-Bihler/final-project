@@ -8,3 +8,35 @@
   text-align: center;
   color: rgb(17, 48, 25);
 }
+
+.dashed-container {
+  height: 600px;
+  border-width: 2px;
+  border-style: dashed;
+  border-color: rgb(17, 48, 25);
+  border-radius: 10px;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.explore-container {
+  max-width: 50%;
+  padding-right: 20px;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.adopt-container img {
+  width: 450px;
+  height: 450px;
+}
+
+.explore-text {
+  color: rgb(17, 48, 25);
+}

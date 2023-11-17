@@ -39,7 +39,10 @@ export default async function ForumPage() {
   return (
     <div>
       <div>
-        <h1> You got some tips or stories to other fellow pet parents? ♥</h1>
+        <h1>
+          {' '}
+          Your Pet Parenting Voice Matters! Share Tips and Stories Here ♥
+        </h1>
         <div className={styles['help']}>
           <p>Feel free to voice out your thoughts here.</p>
         </div>

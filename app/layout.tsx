@@ -64,9 +64,9 @@ export default async function RootLayout(props: Props) {
                 <li>
                   <Link href="/forum">Forum</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/animals-admin">Admin</Link>
-                </li>
+                </li> */}
               </ul>
               {/* Separate container for login/register/logout links */}
               <div className="authLinks">

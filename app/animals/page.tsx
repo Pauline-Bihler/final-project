@@ -14,8 +14,8 @@ export default function AnimalsPage() {
       <div className={styles['text']}>
         <h1>Welcome to our animals page ♥</h1>
         <p>
-          Explore our current lineup of adorable animals waiting to find their
-          forever homes at our shelter.
+          Explore our current residents. These adorable animals are waiting to
+          find their forever homes at our shelter.
           <br />
           If you haven't found the perfect companion here, don't hesitate to
           reach out to us.

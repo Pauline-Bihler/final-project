@@ -59,3 +59,9 @@
 .button:hover {
   background-color: rgb(28, 79, 41);
 }
+
+@media screen and (max-width: 768px) {
+  .form {
+    width: 100%;
+  }
+}
