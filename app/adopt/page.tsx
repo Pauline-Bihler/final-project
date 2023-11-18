@@ -1,10 +1,7 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import { getValidSessionByToken } from '../../database/sessions';
-import {
-  getAllUserAdoptions,
-  getUserBySessionToken,
-} from '../../database/users';
+// import { getValidSessionByToken } from '../../database/sessions';
+import { getUserBySessionToken } from '../../database/users';
 import AdoptMeForm from './AdoptMeForm';
 
 export const metadata = {

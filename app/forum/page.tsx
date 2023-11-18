@@ -1,10 +1,6 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import {
-  getAllUserPosts,
-  getUserBySessionToken,
-  getUserPostBySessionToken,
-} from '../../database/users';
+import { getAllUserPosts, getUserBySessionToken } from '../../database/users';
 import CreatePostsForm from './CreatePostsForm';
 import styles from './forum.module.scss';
 

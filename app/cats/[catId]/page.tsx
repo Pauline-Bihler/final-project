@@ -16,7 +16,7 @@ export function generateMetadata(props: GenerateMetadataProps) {
   };
 }
 
-export default function CatPage(props) {
+export default function CatPage(props: GenerateMetadataProps) {
   const singleCat = getCat(Number(props.params.catId));
   // console.log('check:', singleCat);
 

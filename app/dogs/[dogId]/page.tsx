@@ -17,7 +17,7 @@ export function generateMetadata(props: GenerateMetadataProps) {
   };
 }
 
-export default function DogPage(props) {
+export default function DogPage(props: GenerateMetadataProps) {
   const singleDog = getDog(Number(props.params.dogId));
   // console.log('check:', singleDog);
 
