@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation';
 import { getDog } from '../../../database/dogs';
+// import { getDog } from '../../../database/animals';
 import { AdoptMeButton } from '../../cats/[catId]/AdoptMeButton';
-import { TakeMeOutForAWalkButton } from './TakeMeOutForAWalkButton';
+import { ScheduleButton } from './ScheduleButton';
 
 type GenerateMetadataProps = {
   params: {
@@ -26,7 +27,6 @@ export default function DogPage(props: GenerateMetadataProps) {
   }
   return (
     <div>
-      This is my single dog page.
       <h1>{singleDog.name}</h1>
       <img
         src={`/images/${singleDog.name}.jpg`}
@@ -34,9 +34,10 @@ export default function DogPage(props: GenerateMetadataProps) {
         width={250}
         height={350}
       />
-      <AdoptMeButton />
+      <p>{singleDog.description}</p>
+      <ScheduleButton />
       <br />
-      <TakeMeOutForAWalkButton />
+      <AdoptMeButton />
     </div>
   );
 }

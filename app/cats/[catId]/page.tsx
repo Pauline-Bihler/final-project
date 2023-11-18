@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getCat } from '../../../database/cats';
+import { ScheduleButton } from '../../dogs/[dogId]/ScheduleButton';
 import { AdoptMeButton } from './AdoptMeButton';
 
 type GenerateMetadataProps = {
@@ -25,7 +26,6 @@ export default function CatPage(props: GenerateMetadataProps) {
   }
   return (
     <div>
-      This is a single cat page
       <h1>{singleCat.name}</h1>
       <img
         src={`/images/${singleCat.name}.jpg`}
@@ -33,6 +33,8 @@ export default function CatPage(props: GenerateMetadataProps) {
         width={250}
         height={350}
       />
+      <p>{singleCat.description}</p>
+      <ScheduleButton />
       <AdoptMeButton />
     </div>
   );

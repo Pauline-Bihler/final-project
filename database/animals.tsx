@@ -36,3 +36,9 @@ export const getDogs = cache(async () => {
   `;
   return dogs;
 });
+
+export const getDog = cache(async (dogId: number) => {
+  const dogs = await getDogs();
+  const dog = dogs.find((d) => d.id === dogId);
+  return dog;
+});

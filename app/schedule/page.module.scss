@@ -7,10 +7,16 @@
   color: rgb(28, 79, 41);
 }
 
-.text {
-  margin-bottom: 20px;
+.text-container {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
+.text {
+  margin-bottom: 20px;
+  color: rgb(28, 79, 41);
+}
 .form {
   width: 900px;
   max-height: 100vh;
