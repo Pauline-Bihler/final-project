@@ -13,6 +13,21 @@ export type UserPost = {
   username: string;
 };
 
+export type UserAdoption = {
+  id: number;
+  userId: number;
+  animalName: string;
+  questionOne: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  questionTwo: string;
+  questionThree: string;
+  questionFour: string;
+  additionalRemarks: string | null;
+};
+
 export const createUser = cache(
   async (
     username: string,
@@ -133,4 +148,39 @@ export const getAllUserPosts = cache(async () => {
       INNER JOIN users ON posts.user_id = users.id
   `;
   return posts;
+});
+
+export const getAllUserAdoptions = cache(async () => {
+  const adoptions = await sql<
+    {
+      adoptionId: number;
+      animalName: string;
+      questionOne: string;
+      firstName: string;
+      lastName: string;
+      email: string;
+      phone: string;
+      questionThree: string;
+      questionFour: string;
+      additionalRemarks: string | null;
+      username: string;
+    }[]
+  >`
+    SELECT
+      adoptions.id AS adoption_id,
+      adoptions.animal_name AS animal_name,
+      adoptions.question_one AS question_one,
+      adoptions.first_name AS first_name,
+      adoptions.last_name AS last_name,
+      adoptions.email AS email,
+      adoptions.phone AS phone,
+      adoptions.question_three AS question_three,
+      adoptions.question_four AS question_four,
+      adoptions.additional_remarks AS additional_remarks,
+      users.username AS username
+    FROM
+      adoptions
+      INNER JOIN users ON adoptions.user_id = users.id
+  `;
+  return adoptions;
 });

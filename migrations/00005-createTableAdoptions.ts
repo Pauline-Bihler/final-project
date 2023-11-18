@@ -9,8 +9,8 @@ export type Adoption = {
   lastName: string;
   email: string;
   phone: string;
-  questionTwo: boolean;
-  questionThree: boolean;
+  questionTwo: string;
+  questionThree: string;
   questionFour: string;
   additionalRemarks: string | null;
 };
@@ -27,8 +27,8 @@ export async function up(sql: Sql) {
         last_name VARCHAR(300) NOT NULL,
         email VARCHAR(300) NOT NULL,
         phone VARCHAR(300) NOT NULL,
-        question_two BOOLEAN NOT NULL,
-        question_three BOOLEAN NOT NULL,
+        question_two VARCHAR(300) NOT NULL,
+        question_three VARCHAR(300) NOT NULL,
         question_four VARCHAR(300) NOT NULL,
         additional_remarks text
       );

@@ -11,8 +11,8 @@ export const createAdoption = cache(
     lastName: string,
     email: string,
     phone: string,
-    questionTwo: boolean,
-    questionThree: boolean,
+    questionTwo: string,
+    questionThree: string,
     questionFour: string,
     additionalRemarks: string | null,
   ) => {
