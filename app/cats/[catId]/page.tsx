@@ -35,7 +35,10 @@ export default function CatPage(props: GenerateMetadataProps) {
       />
       <p>{singleCat.description}</p>
       <ScheduleButton />
+      <br />
       <AdoptMeButton />
+      <br />
+      <br />
     </div>
   );
 }

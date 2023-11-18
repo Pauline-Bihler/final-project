@@ -1,0 +1,15 @@
+.centeredContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: rgb(17, 48, 25);
+}
+
+.text {
+  margin-bottom: 20px;
+  color: rgb(28, 79, 41);
+  text-align: center;
+  max-width: 800px;
+}

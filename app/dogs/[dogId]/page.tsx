@@ -38,6 +38,8 @@ export default function DogPage(props: GenerateMetadataProps) {
       <ScheduleButton />
       <br />
       <AdoptMeButton />
+      <br />
+      <br />
     </div>
   );
 }

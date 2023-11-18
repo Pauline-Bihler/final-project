@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import styles from './AdoptMeForm.module.scss';
 import { AdoptMeSubmitButton } from './AdoptMeSubmitButton';
+import style from './AdoptMeSubmitButton.module.scss';
 
 export default function AdoptMeForm({ userId }: { userId: number }) {
   const [animalName, setAnimalName] = useState('');
@@ -48,6 +49,7 @@ export default function AdoptMeForm({ userId }: { userId: number }) {
     setQuestionThree('');
     setQuestionFour('');
     setAdditionalRemarks('');
+    router.push('/thankyou');
   }
 
   return (
@@ -156,7 +158,7 @@ export default function AdoptMeForm({ userId }: { userId: number }) {
         </label>
         <br />
         {/* <AdoptMeSubmitButton /> */}
-        <button>Submit</button>
+        <button className={style['adoptMeSubmitButton']}>Submit</button>
       </form>
     </div>
   );
