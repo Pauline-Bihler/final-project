@@ -70,7 +70,12 @@ export default function Home() {
           <ExploreButton />
         </div>
         <div className={styles['adopt-container']}>
-          <img src="/images/adopt.png" alt="adopt an animal" />
+          <img
+            src="/images/adopt.png"
+            alt="adopt an animal"
+            // width={450}
+            // height={450}
+          />
         </div>
       </div>
       <br />
@@ -80,6 +85,14 @@ export default function Home() {
       <br />
       <br />
       <h2 className={styles['text']}>A list of our partners & sponsors:</h2>
+      <div className={styles['image-container']}>
+        <img
+          src="/images/sponsors.png"
+          alt="adopt an animal"
+          width={1050}
+          height={450}
+        />
+      </div>
     </main>
   );
 }

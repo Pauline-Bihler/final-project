@@ -12,7 +12,7 @@ import LogoutButton from './(auth)/logout/LogoutButton';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Kitties & Doggos of Austria',
+  title: 'Kitties & Doggies of Austria',
   description: 'Adopt & support animals in need',
 };
 
@@ -57,9 +57,7 @@ export default async function RootLayout(props: Props) {
                   </Link>
                 </li>
                 <li>
-                  <Link data-test-id="cart-link" href="/help">
-                    Help us
-                  </Link>
+                  <Link href="/help">Help us</Link>
                 </li>
                 <li>
                   <Link href="/forum">Forum</Link>
@@ -90,7 +88,24 @@ export default async function RootLayout(props: Props) {
             </nav>
           </header>
         </div>
-        {props.children}
+        <div className="mainContent">{props.children}</div>
+        <footer className="footer">
+          <nav className="footer-nav">
+            <ul>
+              <li className="footer-list">
+                <Link href="/about" className="footer-link">
+                  About
+                </Link>
+              </li>
+              <li className="footer-list">
+                <Link href="/help" className="footer-link">
+                  Help us
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <p>All Rights Reserved</p>
+        </footer>
       </body>
     </html>
   );

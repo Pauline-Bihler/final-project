@@ -1,8 +1,11 @@
-.body {
+body {
   background-color: #faf8f7;
   color: rgb(17, 48, 25);
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a {
@@ -73,4 +76,34 @@ a {
   .navHeader li {
     margin: 0;
   }
+}
+
+.footer {
+  background-color: rgb(17, 48, 25);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .footer-list {
+      display: inline-block;
+      margin-right: 10px;
+
+      .footer-link {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+
+p {
+  margin-top: 10px;
 }
