@@ -1,7 +1,9 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 // import { getCats } from '../../database/cats';
 // import { getAnimals } from '../../database/animals';
 import { getCats } from '../../database/animals';
+import styles from './page.module.scss';
 
 export const metadata: Metadata = {
   title: 'Kitties | Kitties & Doggies of Graz',
@@ -14,19 +16,25 @@ export default async function CatsPage() {
     <div>
       <h1>Meet our cute kitties ♥</h1>
 
-      {cats.map((cat) => {
-        return (
-          <div key={`cat-div-${cat.id}`}>
-            <Link href={`/cats/${cat.id}`}>{cat.name}</Link>
-            <img
-              src={`/images/${cat.name}.jpg`}
-              alt={cat.name}
-              width={250}
-              height={350}
-            />
-          </div>
-        );
-      })}
+      <div className={styles['image-container']}>
+        {cats.map((cat) => {
+          return (
+            <div key={`cat-div-${cat.id}`} className={styles['image-item']}>
+              {/* <Link href={`/cats/${cat.id}`}>{cat.name}</Link> */}
+              <img
+                src={`/images/${cat.name}.jpg`}
+                alt={cat.name}
+                width={250}
+                height={350}
+              />
+              <br />
+              <Link href={`/cats/${cat.id}`} className={styles['styles-link']}>
+                {cat.name}
+              </Link>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

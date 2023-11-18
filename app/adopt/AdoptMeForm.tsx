@@ -182,7 +182,7 @@ export default function AdoptMeForm() {
                 name="houseType"
                 value="apartment"
                 required
-                data-test-id="adopt-me-form-question3-apartment"
+                data-test-id="adopt-me-form-question4-apartment"
               />
               <label htmlFor="apartment" className={styles['label']}>
                 Apartment
@@ -190,17 +190,6 @@ export default function AdoptMeForm() {
             </div>
           </label>
           <br />
-          <div className={styles['form-row']}>
-            <label className={styles['label']} htmlFor="apartmentSize">
-              How big is your house/apartment?
-            </label>
-            <input
-              required
-              placeholder="sqm"
-              data-test-id="adopt-me-form-question4"
-              className={styles['input']}
-            />
-          </div>
           <div className={styles['form-row']}>
             <label className={styles['label']} htmlFor="additionalRemarks">
               Additional remarks?
