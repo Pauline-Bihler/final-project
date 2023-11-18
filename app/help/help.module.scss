@@ -1,0 +1,25 @@
+.help-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: justify;
+  border: 2px dashed #1a6a13;
+  margin-bottom: 20px;
+  margin-top: 70px;
+  background-color: rgb(222, 227, 222);
+  // overflow-y: auto;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    margin-top: 30px;
+  }
+
+  p {
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+}

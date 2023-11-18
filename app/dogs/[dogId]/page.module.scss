@@ -1,4 +1,4 @@
-.cat-page-container {
+.dog-page-container {
   display: flex;
   max-width: 600px;
   flex-direction: column;
@@ -10,15 +10,15 @@
   margin: 10vh auto;
 }
 
-.cat-content {
+.dog-content {
   display: flex;
   align-items: center;
 }
 
-.cat-image {
+.dog-image {
   margin-right: 20px;
 }
 
-.cat-details {
+.dog-details {
   text-align: left;
 }

@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { getCat } from '../../../database/cats';
 import { ScheduleButton } from '../../dogs/[dogId]/ScheduleButton';
 import { AdoptMeButton } from './AdoptMeButton';
+import styles from './page.module.scss';
 
 type GenerateMetadataProps = {
   params: {
@@ -25,20 +26,26 @@ export default function CatPage(props: GenerateMetadataProps) {
     return notFound();
   }
   return (
-    <div>
+    <div className={styles['cat-page-container']}>
       <h1>{singleCat.name}</h1>
-      <img
-        src={`/images/${singleCat.name}.jpg`}
-        alt={singleCat.name}
-        width={250}
-        height={350}
-      />
-      <p>{singleCat.description}</p>
-      <ScheduleButton />
-      <br />
-      <AdoptMeButton />
-      <br />
-      <br />
+      <div className={styles['cat-content']}>
+        <img
+          src={`/images/${singleCat.name}.jpg`}
+          alt={singleCat.name}
+          width={250}
+          height={350}
+          className={styles['cat-image']}
+        />
+        <div className={styles['cat-details']}>
+          <p>{singleCat.description}</p>
+          <br />
+          <ScheduleButton />
+          <br />
+          <AdoptMeButton />
+          <br />
+          <br />
+        </div>
+      </div>
     </div>
   );
 }
