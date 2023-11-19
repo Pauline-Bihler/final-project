@@ -1,5 +1,7 @@
+// 'use client';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+import { deletePost } from '../../database/posts';
 import { getAllUserPosts, getUserBySessionToken } from '../../database/users';
 import CreatePostsForm from './CreatePostsForm';
 import styles from './forum.module.scss';
@@ -31,6 +33,16 @@ export default async function ForumPage() {
   // console.log('Checking: ', userPost);
 
   const allUserPosts = await getAllUserPosts();
+
+  // const router = useRouter();
+  // const handleDeletePost = async (postId) => {
+  //   // Call the function to delete the post
+  //   await deletePost(postId);
+
+  //   // Refresh the page or update the state to remove the deleted post from the UI
+  //   // For simplicity, let's refresh the page
+  //   // router.refresh();
+  // };
 
   return (
     <div>
@@ -72,3 +84,46 @@ export default async function ForumPage() {
     </div>
   );
 }
+
+//   return (
+//     <div>
+//       <div>
+//         <h1>
+//           Your Pet Parenting Voice Matters! Share Tips and Stories Here ♥
+//         </h1>
+//         <div className={styles['help']}>
+//           <p>Feel free to voice out your thoughts here.</p>
+//         </div>
+//       </div>
+//       <div>
+//         <CreatePostsForm userId={user.id} />
+//         <br />
+//         <br />
+//         <br />
+//         <div>
+//           {allUserPosts.length > 0 ? (
+//             <>
+//               <h2>All Posts</h2>
+//               <ul>
+//                 {allUserPosts.map((post) => (
+//                   <li key={`animal-div-${post.postId}`}>
+//                     {post.textTitle}
+//                     <br />
+//                     {post.textContent}
+//                     <p>Posted by: {post.username}</p>
+//                     {/* Add a delete button */}
+//                     <button onClick={() => handleDeletePost(post.postId)}>
+//                       Delete
+//                     </button>
+//                   </li>
+//                 ))}
+//               </ul>
+//             </>
+//           ) : (
+//             <h2>No posts yet</h2>
+//           )}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }

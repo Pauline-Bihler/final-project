@@ -22,3 +22,19 @@ export const createPost = cache(
     return post;
   },
 );
+
+// export const deletePost = async (postId: number) => {
+//   await sql`
+//     DELETE FROM posts
+//     WHERE
+//       postId = ${postId}
+//   `;
+// };
+
+export async function deletePost(postId: number): Promise<void> {
+  await sql`
+    DELETE FROM posts
+    WHERE
+      id = ${postId}
+  `;
+}

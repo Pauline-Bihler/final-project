@@ -17,7 +17,7 @@ export function AdoptMeSubmitButton() {
         type="button"
         onClick={adoptMe}
       >
-        Submit ♥
+        Submit 🐾
       </button>
     </div>
   );

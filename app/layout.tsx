@@ -28,6 +28,7 @@ export default async function RootLayout(props: Props) {
   // 3. Make decision whether to show the login and register links or not
 
   // 1. Checking if the sessionToken cookie exists
+
   const cookieStore = cookies();
   const sessionToken = cookieStore.get('sessionToken');
 
@@ -65,13 +66,29 @@ export default async function RootLayout(props: Props) {
                 {/* <li>
                   <Link href="/animals-admin">Admin</Link>
                 </li> */}
+                {/* {user && (
+                  <li>
+                    <Link href={`/profile/${user.username}`}>
+                      {user.username}
+                    </Link>
+                  </li>
+                )} */}
               </ul>
               {/* Separate container for login/register/logout links */}
               <div className="authLinks">
+                <ul className="authLinks">
+                  {user && (
+                    <li>
+                      <Link href={`/profile/${user.username}`}>
+                        {user.username}
+                      </Link>
+                    </li>
+                  )}
+                </ul>
                 {user ? (
                   <>
-                    <div>Hi {user.username}, so happy you're back!</div>
-                    {/* <ProfileButton /> */}
+                    {/* <Link href={`/profile/${user.username}`} /> */}
+                    {/* <div>Hi {user.username}, so happy you're back!</div> */}
                     <LogoutButton />
                   </>
                 ) : (
