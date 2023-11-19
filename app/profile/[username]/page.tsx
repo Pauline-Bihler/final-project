@@ -1,4 +1,10 @@
-import { getAllUserAdoptions } from '../../../database/users';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
+// import { getAllUserAdoptions } from '../../../database/users';
+import {
+  getUserAdoptionBySessionToken,
+  getUserBySessionToken,
+} from '../../../database/users';
 import styles from './page.module.scss';
 
 type Props = {
@@ -7,19 +13,30 @@ type Props = {
 
 export default async function UserProfilePage({ params }: Props) {
   // console.log('Check:', params);
-  const allUserAdoptions = await getAllUserAdoptions();
+  // const allUserAdoptions = await getAllUserAdoptions();
+  const sessionTokenCookie = cookies().get('sessionToken');
+
+  const user =
+    sessionTokenCookie &&
+    (await getUserBySessionToken(sessionTokenCookie.value));
+
+  if (!user) redirect('/login');
+
+  const userAdoptions = await getUserAdoptionBySessionToken(
+    sessionTokenCookie.value,
+  );
 
   return (
     <div className={styles['centeredContainer']}>
       <h1>You are currently logged-in</h1>
       <h2>{params.username}'s profile page</h2>
       <div>
-        {allUserAdoptions.length > 0 ? (
+        {userAdoptions.length > 0 ? (
           <>
             <h2>All Adoption Forms</h2>
 
             <ul>
-              {allUserAdoptions.map((adoption) => (
+              {userAdoptions.map((adoption) => (
                 <li
                   key={`animal-div-${adoption.adoptionId}`}
                   className={styles.adoptionForm}

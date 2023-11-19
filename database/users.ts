@@ -186,3 +186,45 @@ export const getAllUserAdoptions = cache(async () => {
   `;
   return adoptions;
 });
+
+export const getUserAdoptionBySessionToken = cache(async (token: string) => {
+  const adoptions = await sql<
+    {
+      adoptionId: number;
+      animalName: string;
+      questionOne: string;
+      firstName: string;
+      lastName: string;
+      email: string;
+      phone: string;
+      questionTwo: string;
+      questionThree: string;
+      questionFour: string;
+      additionalRemarks: string | null;
+      username: string;
+    }[]
+  >`
+    SELECT
+      adoptions.id AS adoption_id,
+      adoptions.animal_name AS animal_name,
+      adoptions.question_one AS question_one,
+      adoptions.first_name AS first_name,
+      adoptions.last_name AS last_name,
+      adoptions.email AS email,
+      adoptions.phone AS phone,
+      adoptions.question_two AS question_two,
+      adoptions.question_three AS question_three,
+      adoptions.question_four AS question_four,
+      adoptions.additional_remarks AS additional_remarks,
+      users.username AS username
+    FROM
+      adoptions
+      INNER JOIN users ON adoptions.user_id = users.id
+      INNER JOIN sessions ON (
+        sessions.token = ${token}
+        AND sessions.user_id = users.id
+        AND sessions.expiry_timestamp > now ()
+      )
+  `;
+  return adoptions;
+});
