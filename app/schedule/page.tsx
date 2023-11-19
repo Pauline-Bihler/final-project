@@ -1,3 +1,7 @@
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
+import { getUserBySessionToken } from '../../database/users';
+import CreateSchedulesForm from './CreateSchedulesForm';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -5,7 +9,17 @@ export const metadata = {
   description: 'Adopt & support animals in need',
 };
 
-export default function SchedulePage() {
+export default async function SchedulePage() {
+  // 1. Checking if the sessionToken cookie exists
+  const sessionTokenCookie = cookies().get('sessionToken');
+
+  // 2. Check if the sessionToken cookie is still valid
+  const user =
+    sessionTokenCookie &&
+    (await getUserBySessionToken(sessionTokenCookie.value));
+
+  // 3. If the sessionToken cookie is invalid or doesn't exist, redirect to login with returnTo
+  if (!user) redirect('/login?returnTo=/schedule');
   return (
     <div className={styles['text-container']}>
       <div>
@@ -15,6 +29,8 @@ export default function SchedulePage() {
           <br />
           Begin Your Adoption Journey Today!
         </h2>
+        <br />
+        <br />
         <p className={styles['text']}>
           Schedule a personalized meetup with the animals you connect with most,
           providing an opportunity for mutual understanding and a chance to
@@ -25,8 +41,10 @@ export default function SchedulePage() {
           toward creating a forever home for these wonderful animals.
         </p>
       </div>
-
-      <div>
+      <br />
+      <br />
+      <CreateSchedulesForm userId={user.id} />
+      {/* <div>
         <form>
           <label>
             Please enter the day you want to visit:
@@ -38,7 +56,7 @@ export default function SchedulePage() {
             <input placeholder="9:00 pm - 5:00 pm" />
           </label>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 }
