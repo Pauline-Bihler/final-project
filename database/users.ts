@@ -160,6 +160,7 @@ export const getAllUserAdoptions = cache(async () => {
       lastName: string;
       email: string;
       phone: string;
+      questionTwo: string;
       questionThree: string;
       questionFour: string;
       additionalRemarks: string | null;
@@ -174,6 +175,7 @@ export const getAllUserAdoptions = cache(async () => {
       adoptions.last_name AS last_name,
       adoptions.email AS email,
       adoptions.phone AS phone,
+      adoptions.question_two AS question_two,
       adoptions.question_three AS question_three,
       adoptions.question_four AS question_four,
       adoptions.additional_remarks AS additional_remarks,
