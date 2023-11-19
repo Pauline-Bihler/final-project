@@ -228,3 +228,24 @@ export const getUserAdoptionBySessionToken = cache(async (token: string) => {
   `;
   return adoptions;
 });
+
+export const getUserScheduleBySessionToken = cache(async (token: string) => {
+  const schedules = await sql<
+    { scheduleId: number; day: string; time: string; username: string }[]
+  >`
+    SELECT
+      schedules.id AS schedule_id,
+      schedules.day AS DAY,
+      schedules.time AS TIME,
+      users.username AS username
+    FROM
+      schedules
+      INNER JOIN users ON schedules.user_id = users.id
+      INNER JOIN sessions ON (
+        sessions.token = ${token}
+        AND sessions.user_id = users.id
+        AND sessions.expiry_timestamp > now ()
+      )
+  `;
+  return schedules;
+});

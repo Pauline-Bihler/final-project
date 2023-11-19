@@ -7,23 +7,74 @@
 //   color: rgb(17, 48, 25);
 // }
 
+// .centeredContainer {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// .adoptionForm {
+//   border: 2px solid #333;
+//   padding: 10px;
+//   margin-bottom: 20px;
+// }
+
+// .adoptionQuestion {
+//   font-weight: bold;
+//   margin-bottom: 5px;
+// }
+
+// .adoptionAnswer {
+//   margin-bottom: 10px;
+// }
+
+// .scheduleForm {
+//   border: 2px solid #333;
+//   padding: 10px;
+//   margin-bottom: 20px;
+// }
+
+// .scheduleQuestion {
+//   font-weight: bold;
+//   margin-bottom: 5px;
+// }
+
+// .scheduleAnswer {
+//   margin-bottom: 10px;
+// }
+
 .centeredContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.adoptionForm {
-  border: 2px solid #333;
-  padding: 10px;
-  margin-bottom: 20px;
+.formContainer {
+  display: flex;
+  // justify-content: space-between;
+  justify-content: center;
+
+  width: 100%;
 }
 
-.adoptionQuestion {
+.adoptionForm,
+.scheduleForm {
+  border: 2px solid #333;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.question {
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.adoptionAnswer {
+.answer {
   margin-bottom: 10px;
+}
+
+.text {
+  text-align: center;
 }
