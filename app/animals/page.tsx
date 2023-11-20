@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Metadata } from 'next';
 import { MeetOurDoggiesButton } from './MeetOurDoggies';
 import { MeetOurKittiesButton } from './MeetOurKitties';
 import styles from './page.module.scss';
@@ -12,7 +12,7 @@ export default function AnimalsPage() {
   return (
     <div>
       <div className={styles['text']}>
-        <h1>Welcome to our animals page ♥</h1>
+        <h1>Welcome to our animals page 🐾</h1>
         <p>
           Explore our current residents. These adorable animals are waiting to
           find their forever homes at our shelter.

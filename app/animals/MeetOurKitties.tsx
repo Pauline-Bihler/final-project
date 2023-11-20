@@ -17,7 +17,7 @@ export function MeetOurKittiesButton() {
         type="button"
         onClick={viewAll}
       >
-        Meet our cute kitties ♥
+        Meet our cute kitties 🐾
       </button>
     </div>
   );

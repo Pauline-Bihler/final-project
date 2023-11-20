@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { logout } from './actions';
+import styles from './LogoutButton.module.scss';
 
 export default function LogoutButton() {
   const router = useRouter();
@@ -14,7 +15,7 @@ export default function LogoutButton() {
 
   return (
     <form action="/logout" method="post">
-      <button className="logoutButton" onClick={handleLogout}>
+      <button className={styles['logout-button']} onClick={handleLogout}>
         Logout
       </button>
     </form>

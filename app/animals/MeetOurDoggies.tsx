@@ -7,7 +7,7 @@ export function MeetOurDoggiesButton() {
   const router = useRouter();
 
   const viewAll = async () => {
-    await router.push('dogs/');
+    await router.push('/dogs');
   };
 
   return (
@@ -17,7 +17,7 @@ export function MeetOurDoggiesButton() {
         type="button"
         onClick={viewAll}
       >
-        Meet our brave doggies ♥
+        Meet our brave doggies 🐾
       </button>
     </div>
   );

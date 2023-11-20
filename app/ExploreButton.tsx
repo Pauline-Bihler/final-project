@@ -17,7 +17,7 @@ export function ExploreButton() {
         type="button"
         onClick={explore}
       >
-        Explore ♥
+        Explore 🐾
       </button>
     </div>
   );
