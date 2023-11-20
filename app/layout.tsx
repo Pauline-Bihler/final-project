@@ -46,22 +46,30 @@ export default async function RootLayout(props: Props) {
           <header>
             <nav className="navHeader">
               <ul>
-                <li>
+                <Link href="/">
+                  <img
+                    src="/images/logo.png"
+                    alt="logo"
+                    width={80}
+                    height={80}
+                  />{' '}
+                </Link>
+              </ul>
+              <ul>
+                {/* <li>
                   <Link href="/">Home</Link>
+                </li> */}
+                <li>
+                  <Link href="/animals">Animals</Link>
                 </li>
                 <li>
-                  <Link href="/about">About</Link>
-                </li>
-                <li>
-                  <Link data-test-id="products-link" href="/animals">
-                    Animals
-                  </Link>
+                  <Link href="/forum">Forum</Link>
                 </li>
                 <li>
                   <Link href="/help">Help us</Link>
                 </li>
                 <li>
-                  <Link href="/forum">Forum</Link>
+                  <Link href="/about">About</Link>
                 </li>
                 {/* <li>
                   <Link href="/animals-admin">Admin</Link>
