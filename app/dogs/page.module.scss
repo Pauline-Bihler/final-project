@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.image-container img {
+  border-radius: 10px;
+}
+
 .image-item {
   width: calc(33.33% - 20px);
   margin: 10px;

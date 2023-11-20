@@ -18,15 +18,22 @@
   justify-content: space-between;
   margin-bottom: 20px;
   padding: 15px;
+  border-radius: 10px;
+}
+
+.imageContainer img {
+  border-radius: 10px;
 }
 
 .meetKittiesContainer {
   margin-top: 20px;
   margin-left: 20px;
   flex-direction: row;
+  align-items: center;
 }
 
 .meetDoggiesContainer {
   margin-top: 20px;
   flex-direction: row;
+  align-items: center;
 }

@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   border: 2px dashed #393d47;
+  border-radius: 10px;
   padding: 20px;
   margin: 0 auto;
   margin: 10vh auto;
@@ -14,10 +15,16 @@
   display: flex;
   align-items: center;
   color: #393d47;
+  border-radius: 10px;
 }
 
 .cat-image {
   margin-right: 20px;
+  border-radius: 10px;
+}
+
+.cat-container img {
+  border-radius: 10px;
 }
 
 .cat-details {
