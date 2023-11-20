@@ -1,10 +1,4 @@
-.centeredContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.learnMoreAboutUsButton {
+.loginButton {
   // background-color: rgb(28, 79, 41);
   background-color: #edefe0;
   border: 2px solid;
@@ -17,7 +11,7 @@
   margin-top: 20px;
   margin-bottom: 20px;
   justify-content: space-between;
-  margin-right: 20px;
+  margin-right: 30px;
 
   &:hover {
     background-color: #e9ffc2;

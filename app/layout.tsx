@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 import { getUserBySessionToken } from '../database/users';
 import LogoutButton from './(auth)/logout/LogoutButton';
+import { LoginButton } from './LoginButton';
 
 // import { ProfileButton } from './profile/[username]/ProfileButton';
 
@@ -100,15 +101,16 @@ export default async function RootLayout(props: Props) {
                     <LogoutButton />
                   </>
                 ) : (
-                  <ul>
-                    <li>
-                      <Link href="/login">Log-in</Link>
-                    </li>
+                  <ul className="authLinks">
                     <li>
                       <Link href="/register">Register</Link>
                     </li>
+                    <li>
+                      <LoginButton />
+                    </li>
                   </ul>
                 )}
+                {/* <LoginButton /> */}
               </div>
             </nav>
           </header>
