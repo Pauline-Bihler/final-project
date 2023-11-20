@@ -102,10 +102,10 @@ export default async function RootLayout(props: Props) {
                 ) : (
                   <ul>
                     <li>
-                      <Link href="/register">Register</Link>
+                      <Link href="/login">Log-in</Link>
                     </li>
                     <li>
-                      <Link href="/login">Log-in</Link>
+                      <Link href="/register">Register</Link>
                     </li>
                   </ul>
                 )}

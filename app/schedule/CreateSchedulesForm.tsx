@@ -2,6 +2,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import styles from './CreateSchedulesForm.module.scss';
+import style from './SubmitButton.module.scss';
 
 export default function CreateSchedulesForm({ userId }: { userId: number }) {
   const [day, setDay] = useState('');
@@ -21,6 +22,7 @@ export default function CreateSchedulesForm({ userId }: { userId: number }) {
     router.refresh();
     setDay('');
     setTime('');
+    router.push('/thankyou');
   }
 
   return (
@@ -54,7 +56,7 @@ export default function CreateSchedulesForm({ userId }: { userId: number }) {
             />
           </label>
         </div>
-        <button className={styles['submit-button']}>Submit 🐾</button>
+        <button className={style['submitButton']}>Submit 🐾</button>
       </form>
     </div>
   );

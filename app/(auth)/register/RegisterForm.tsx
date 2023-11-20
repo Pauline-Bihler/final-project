@@ -108,9 +108,8 @@ export default function RegisterForm() {
             />
           </label>
         </div>
-        <div className={styles['button']}>
-          <button>Register</button>
-        </div>
+
+        <button className={styles['register-button']}>Register</button>
 
         {errors.map((error) => (
           <div className="error" key={`error-${error.message}`}>

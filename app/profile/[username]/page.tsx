@@ -124,9 +124,10 @@ export default async function UserProfilePage({ params }: Props) {
   //   );
   // }
 
+  // ~~~
   return (
     <div className={styles['centeredContainer']}>
-      <h1>You are currently logged-in</h1>
+      {/* <h1>You are currently logged-in</h1> */}
       <h2>{params.username}'s profile page</h2>
       <div className={styles.formContainer}>
         <div>

@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { getSafeReturnToPath } from '../../../util/validation';
@@ -88,16 +89,18 @@ export default function LoginForm(props: Props) {
           onChange={(event) => setAge(parseInt(event.currentTarget.value))}
         />
       </label> */}
-        <div className={styles['button']}>
-          <button>Log-in</button>
+        <div>
+          <button className={styles['login-button']}>Log-in</button>
         </div>
-
         {errors.map((error) => (
           <div className="error" key={`error-${error.message}`}>
             Error: {error.message}
           </div>
         ))}
       </form>
+      {/* <p>
+        Haven't registered? Register here <Link href="/login">Log-in</Link>
+      </p> */}
     </div>
   );
 }

@@ -33,19 +33,30 @@
   flex-direction: column;
 }
 
-.button {
-  background-color: rgb(28, 79, 41);
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .button:hover {
   background-color: rgb(28, 79, 41);
 }
 
 .error {
   color: red;
+}
+
+.login-button {
+  // background-color: rgb(28, 79, 41);
+  background-color: #edefe0;
+  border: 2px solid;
+  border-color: #113019;
+  color: #393d47;
+  // padding: 12px 20px;
+  padding: 12px 0;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+
+  &:hover {
+    background-color: #e9ffc2;
+  }
 }
