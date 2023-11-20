@@ -21,7 +21,7 @@ export default async function SchedulePage() {
   // 3. If the sessionToken cookie is invalid or doesn't exist, redirect to login with returnTo
   if (!user) redirect('/login?returnTo=/schedule');
   return (
-    <div className={styles['text-container']}>
+    <div>
       <div>
         <div className={styles['horizontal-banner']}>
           <h1 className={styles['banner-text']}>

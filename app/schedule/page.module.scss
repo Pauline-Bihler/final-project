@@ -34,23 +34,11 @@
   padding-bottom: 2px;
 
   .banner-text {
-    color: whitesmoke;
+    // color: whitesmoke;
+    color: #43464b;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    //   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
-}
-
-.button {
-  background-color: rgb(28, 79, 41);
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: rgb(28, 79, 41);
 }
 
 @media screen and (max-width: 768px) {

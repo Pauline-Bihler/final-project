@@ -5,6 +5,7 @@ import { deletePost } from '../../database/posts';
 import { getAllUserPosts, getUserBySessionToken } from '../../database/users';
 import CreatePostsForm from './CreatePostsForm';
 import styles from './forum.module.scss';
+import style from './page.module.scss';
 
 export const metadata = {
   title: 'Forum | Kitties & Doggies of Graz',
@@ -47,14 +48,18 @@ export default async function ForumPage() {
   return (
     <div>
       <div>
-        <h1>
-          {' '}
-          Your Pet Parenting Voice Matters! Share Tips and Stories Here ♥
-        </h1>
-        <div className={styles['help']}>
-          <p>Feel free to voice out your thoughts here.</p>
+        <div className={style['horizontal-banner']}>
+          <h1 className={style['banner-text']}>
+            Your Pet Parenting Voice Matters!
+          </h1>
+          <h2 className={style['banner-text']}>Share Tips and Stories Here.</h2>
         </div>
+        {/* <div className={styles['help']}>
+          <p>Feel free to voice out your thoughts here.</p>
+        </div> */}
       </div>
+      <br />
+      <br />
       <div>
         <CreatePostsForm userId={user.id} />
         <br />
@@ -63,13 +68,15 @@ export default async function ForumPage() {
         <div>
           {allUserPosts.length > 0 ? (
             <>
-              <h2>All Posts</h2>
+              <h2 className={style['text-h2']}>All Posts</h2>
 
-              <ul>
+              <ul className={style['ul-container']}>
                 {allUserPosts.map((post) => (
-                  <li key={`animal-div-${post.postId}`}>
-                    {post.textTitle}
-                    <br />
+                  <li
+                    key={`animal-div-${post.postId}`}
+                    className={style['post-box']}
+                  >
+                    <h2>{post.textTitle}</h2>
                     {post.textContent}
                     <p>Posted by: {post.username}</p>
                   </li>
