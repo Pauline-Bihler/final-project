@@ -13,13 +13,13 @@ export function ScheduleButton() {
   };
 
   return (
-    <div className={styles['centeredContainer']}>
+    <div>
       <button
         className={styles['schedule-button']}
         type="button"
         onClick={schedule}
       >
-        Schedule a meeting ♥
+        Schedule a meeting 🐾
       </button>
     </div>
   );

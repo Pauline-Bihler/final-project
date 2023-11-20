@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px dashed #333;
+  border: 2px dashed #393d47;
   padding: 20px;
   margin: 0 auto;
   margin: 10vh auto;
@@ -13,6 +13,7 @@
 .cat-content {
   display: flex;
   align-items: center;
+  color: #393d47;
 }
 
 .cat-image {
@@ -21,4 +22,5 @@
 
 .cat-details {
   text-align: left;
+  color: #393d47;
 }

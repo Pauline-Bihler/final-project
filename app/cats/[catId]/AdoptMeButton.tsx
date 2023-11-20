@@ -11,13 +11,13 @@ export function AdoptMeButton() {
   };
 
   return (
-    <div className={styles['centeredContainer']}>
+    <div>
       <button
         className={styles['adoptMeButton']}
         type="button"
         onClick={adoptMe}
       >
-        Adopt Me ♥
+        Adopt Me 🐾
       </button>
     </div>
   );

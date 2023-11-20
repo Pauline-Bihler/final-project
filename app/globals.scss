@@ -81,8 +81,11 @@ a {
 }
 
 .footer {
-  background-color: rgb(17, 48, 25);
-  color: whitesmoke;
+  // background-color: rgb(17, 48, 25);
+  background-color: rgb(196, 213, 185);
+  color: #393d47;
+  // color: whitesmoke;
+  // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   padding: 20px;
   text-align: center;
   margin-top: auto;
@@ -100,11 +103,15 @@ a {
 
       .footer-link {
         text-decoration: none;
-        color: white;
+        // color: whitesmoke;
+        // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        color: #393d47;
 
         &:hover {
           text-decoration: none;
-          color: #b9c32a;
+          // color: #b9c32a;
+          color: whitesmoke;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
           &::before {
             content: '';
