@@ -160,6 +160,7 @@ export default function AdoptMeForm({ userId }: { userId: number }) {
         {/* <AdoptMeSubmitButton /> */}
         <button className={style['adoptMeSubmitButton']}>Submit 🐾</button>
       </form>
+      <br />
     </div>
   );
 }

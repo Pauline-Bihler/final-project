@@ -33,6 +33,7 @@ export default async function AdoptPage() {
   return (
     <div>
       <AdoptMeForm userId={user.id} />
+      <br />
     </div>
   );
 }

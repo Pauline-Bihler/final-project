@@ -47,18 +47,35 @@
   border-radius: 5px;
 }
 
-.button {
-  background-color: rgb(28, 79, 41);
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
+.submit-button {
+  // background-color: rgb(28, 79, 41);
+  background-color: #edefe0;
+  border: 2px solid;
+  border-color: #113019;
+  color: #393d47;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 8px;
   cursor: pointer;
-}
+  margin-top: 10px;
+  margin-bottom: 10px;
 
-.button:hover {
-  background-color: rgb(28, 79, 41);
+  &:hover {
+    background-color: #e9ffc2;
+  }
 }
+// .button {
+//   background-color: rgb(28, 79, 41);
+//   color: white;
+//   padding: 10px 15px;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+// }
+
+// .button:hover {
+//   background-color: rgb(28, 79, 41);
+// }
 
 @media screen and (max-width: 768px) {
   .form {

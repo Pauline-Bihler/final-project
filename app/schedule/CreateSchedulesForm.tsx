@@ -54,7 +54,7 @@ export default function CreateSchedulesForm({ userId }: { userId: number }) {
             />
           </label>
         </div>
-        <button>Submit</button>
+        <button className={styles['submit-button']}>Submit 🐾</button>
       </form>
     </div>
   );

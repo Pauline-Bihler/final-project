@@ -23,12 +23,16 @@ export default async function SchedulePage() {
   return (
     <div className={styles['text-container']}>
       <div>
-        <h1 className={styles['text']}>Discover Your Future Furry Friend</h1>
-        <h2 className={styles['text']}>
-          Schedule a Meetup, Connect, and
-          <br />
-          Begin Your Adoption Journey Today!
-        </h2>
+        <div className={styles['horizontal-banner']}>
+          <h1 className={styles['banner-text']}>
+            Discover Your Future Furry Friend
+          </h1>
+          <h2 className={styles['banner-text']}>
+            Schedule a Meetup, Connect, and
+            <br />
+            Begin Your Adoption Journey Today!
+          </h2>
+        </div>
         <br />
         <br />
         <p className={styles['text']}>
@@ -42,21 +46,10 @@ export default async function SchedulePage() {
         </p>
       </div>
       <br />
-      <br />
       <CreateSchedulesForm userId={user.id} />
-      {/* <div>
-        <form>
-          <label>
-            Please enter the day you want to visit:
-            <input placeholder="Monday-Saturday" />
-          </label>
-          <br />
-          <label>
-            Please enter the time you want to visit:
-            <input placeholder="9:00 pm - 5:00 pm" />
-          </label>
-        </form>
-      </div> */}
+      <br />
+      <br />
+      <br />
     </div>
   );
 }
