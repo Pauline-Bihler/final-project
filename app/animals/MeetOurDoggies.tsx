@@ -11,7 +11,7 @@ export function MeetOurDoggiesButton() {
   };
 
   return (
-    <div className={styles['centeredContainer']}>
+    <div>
       <button
         className={styles['meetOurDoggiesButton']}
         type="button"

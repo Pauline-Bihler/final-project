@@ -14,27 +14,38 @@ export default async function CatsPage() {
   const cats = await getCats();
   return (
     <div>
-      <h1>Meet our cute kitties ♥</h1>
+      <h1 className={styles['text']}>Meet our cute kitties 🐾</h1>
 
-      <div className={styles['image-container']}>
-        {cats.map((cat) => {
-          return (
-            <div key={`cat-div-${cat.id}`} className={styles['image-item']}>
-              {/* <Link href={`/cats/${cat.id}`}>{cat.name}</Link> */}
-              <img
-                src={`/images/${cat.name}.jpg`}
-                alt={cat.name}
-                width={250}
-                height={350}
-              />
-              <br />
-              <Link href={`/cats/${cat.id}`} className={styles['styles-link']}>
-                {cat.name}
-              </Link>
-            </div>
-          );
-        })}
+      <div className={styles['gradient-line']}>
+        <div className={styles['image-container']}>
+          {cats.map((cat) => {
+            return (
+              <div key={`cat-div-${cat.id}`} className={styles['image-item']}>
+                {/* <Link href={`/cats/${cat.id}`}>{cat.name}</Link> */}
+                <br />
+                <img
+                  src={`/images/${cat.name}.jpg`}
+                  alt={cat.name}
+                  width={250}
+                  height={350}
+                />
+                <br />
+                <Link
+                  href={`/cats/${cat.id}`}
+                  className={styles['styles-link']}
+                >
+                  {cat.name}
+                </Link>
+                <br />
+              </div>
+            );
+          })}
+          <br />
+        </div>
+        <br />
       </div>
+      <br />
+      <br />
     </div>
   );
 }

@@ -17,3 +17,33 @@
   text-decoration: none;
   text-align: center;
 }
+.text {
+  text-align: center;
+  color: #393d47;
+}
+
+.gradient-line {
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #b9c32a, transparent);
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  &:after {
+    bottom: 0;
+  }
+}
