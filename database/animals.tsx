@@ -37,8 +37,26 @@ export const getDogs = cache(async () => {
   return dogs;
 });
 
-export const getDog = cache(async (dogId: number) => {
-  const dogs = await getDogs();
-  const dog = dogs.find((d) => d.id === dogId);
-  return dog;
+export const getAnimal = cache(async (animalId: number) => {
+  const animals = await getAnimals();
+  const animal = animals.find((a) => a.id === animalId);
+  return animal;
+});
+
+export const getSingleCat = cache(async () => {
+  const singleCat = await sql<
+    { id: number; name: string; description: string | null }[]
+  >`
+    SELECT
+      id,
+      name,
+      description
+    FROM
+      animals
+    WHERE
+      type = 'Cat'
+    LIMIT
+      1
+  `;
+  return singleCat;
 });
