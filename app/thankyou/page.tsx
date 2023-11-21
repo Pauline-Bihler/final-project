@@ -8,7 +8,7 @@ export const metadata = {
 export default function ThankyouPage() {
   return (
     <div className={styles['centeredContainer']}>
-      <h1>Thank you for your inquiry ♥</h1>
+      <h1>Thank you for your inquiry 🐾</h1>
       <p className={styles['text']}>
         We truly appreciate your interest in adopting a furry friend from
         Kitties & Doggies of Graz!
@@ -27,6 +27,7 @@ export default function ThankyouPage() {
         We look forward to helping you find the perfect companion to welcome
         into your home.
       </p>
+      <br />
     </div>
   );
 }

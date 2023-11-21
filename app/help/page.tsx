@@ -8,7 +8,7 @@ export const metadata = {
 export default function HelpPage() {
   return (
     <div className={styles['help-container']}>
-      <h1>Thank you for your inquiry ♥</h1>
+      <h1>Thank you for your inquiry 🐾</h1>
       <p>
         We truly appreciate your interest in adopting a furry friend from
         Kitties & Doggies of Graz! Your inquiry has been received, and our

@@ -68,7 +68,8 @@ export default function Home() {
       </h2>
       <br />
       <br />
-      <div className={styles['dashed-container']}>
+      <div className={styles['gradient-line']}>
+        <br />
         <h1 className={styles['text']}>How does the adoption process work?</h1>
         <div className={styles['process-image-container']}>
           <img
@@ -89,6 +90,7 @@ export default function Home() {
             width={450}
             height={450}
           />
+          <br />
         </div>
       </div>
       <br />
