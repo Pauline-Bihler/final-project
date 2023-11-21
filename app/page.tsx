@@ -69,7 +69,7 @@ export default function Home() {
       <br />
       <br />
       <div className={styles['dashed-container']}>
-        <h2 className={styles['text']}>How does the adoption process work?</h2>
+        <h1 className={styles['text']}>How does the adoption process work?</h1>
         <div className={styles['process-image-container']}>
           <img
             src="/images/schedule.png"
@@ -99,8 +99,11 @@ export default function Home() {
         <div className={styles['content-container']}>
           <div className={styles['explore-container']}>
             <h2 className={styles['explore-text']}>
-              Explore our current residents. These adorable animals are waiting
-              to find their forever homes at our shelter.
+              {/* Explore the tales of our delightful residents, eager to find
+              forever homes at our shelter.  */}
+              Curious to learn more about our shelter?
+              <br />
+              Visit our About page for an in-depth look into their journey.
             </h2>
             <LearnMoreAboutUsButton />
           </div>

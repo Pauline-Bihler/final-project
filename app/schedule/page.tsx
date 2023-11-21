@@ -46,6 +46,7 @@ export default async function SchedulePage() {
         </p>
       </div>
       <br />
+      <br />
       <CreateSchedulesForm userId={user.id} />
       <br />
       <br />

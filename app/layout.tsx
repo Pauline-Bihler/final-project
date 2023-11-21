@@ -1,6 +1,6 @@
 import './globals.scss';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Quicksand } from 'next/font/google';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { ReactNode } from 'react';
@@ -10,7 +10,8 @@ import { LoginButton } from './LoginButton';
 
 // import { ProfileButton } from './profile/[username]/ProfileButton';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
+const quicksand = Quicksand({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Kitties & Doggies of Austria',
@@ -42,7 +43,7 @@ export default async function RootLayout(props: Props) {
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={quicksand.className}>
         <div className="navContainer">
           <header>
             <nav className="navHeader">
