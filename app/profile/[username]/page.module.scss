@@ -1,48 +1,3 @@
-// .centeredContainer {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   height: 100vh;
-//   color: rgb(17, 48, 25);
-// }
-
-// .centeredContainer {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// .adoptionForm {
-//   border: 2px solid #333;
-//   padding: 10px;
-//   margin-bottom: 20px;
-// }
-
-// .adoptionQuestion {
-//   font-weight: bold;
-//   margin-bottom: 5px;
-// }
-
-// .adoptionAnswer {
-//   margin-bottom: 10px;
-// }
-
-// .scheduleForm {
-//   border: 2px solid #333;
-//   padding: 10px;
-//   margin-bottom: 20px;
-// }
-
-// .scheduleQuestion {
-//   font-weight: bold;
-//   margin-bottom: 5px;
-// }
-
-// .scheduleAnswer {
-//   margin-bottom: 10px;
-// }
-
 .centeredContainer {
   display: flex;
   flex-direction: column;
@@ -83,4 +38,8 @@
 
 .text {
   text-align: center;
+}
+
+.no-bookings {
+  padding: 0 10px 0 10px;
 }

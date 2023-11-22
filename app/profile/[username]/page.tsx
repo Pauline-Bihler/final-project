@@ -30,101 +30,7 @@ export default async function UserProfilePage({ params }: Props) {
   const userSchedules = await getUserScheduleBySessionToken(
     sessionTokenCookie.value,
   );
-  //   return (
-  //     <div className={styles['centeredContainer']}>
-  //       <h1>You are currently logged-in</h1>
-  //       <h2>{params.username}'s profile page</h2>
-  //       <div>
-  //         {userSchedules.length > 0 ? (
-  //           <>
-  //             <h2>All Schedules Booked</h2>
 
-  //             <ul>
-  //               {userSchedules.map((schedule) => (
-  //                 <li
-  //                   key={`animal-div-${schedule.scheduleId}`}
-  //                   className={styles.scheduleForm}
-  //                 >
-  //                   <p className={styles.scheduleQuestion}>
-  //                     Please enter the day you want to visit:
-  //                   </p>
-  //                   <p className={styles.scheduleAnswer}>{schedule.day}</p>
-  //                   <p className={styles.scheduleQuestion}>
-  //                     Please enter the time you want to visit:
-  //                   </p>
-  //                   <p className={styles.scheduleAnswer}>{schedule.time}</p>
-  //                 </li>
-  //               ))}
-  //             </ul>
-  //           </>
-  //         ) : (
-  //           <h2> No bookings yet</h2>
-  //         )}
-  //       </div>
-  //       <div>
-  //         {userAdoptions.length > 0 ? (
-  //           <>
-  //             <h2>All Adoption Forms</h2>
-  //             <ul>
-  //               {userAdoptions.map((adoption) => (
-  //                 <li
-  //                   key={`animal-div-${adoption.adoptionId}`}
-  //                   className={styles.adoptionForm}
-  //                 >
-  //                   <p className={styles.adoptionQuestion}>
-  //                     What's the name of the resident that you want to adopt?
-  //                   </p>
-  //                   <p className={styles.adoptionAnswer}>{adoption.animalName}</p>
-  //                   <p className={styles.adoptionQuestion}>
-  //                     Which type do you want to adopt?
-  //                   </p>
-  //                   <p className={styles.adoptionAnswer}>
-  //                     {adoption.questionOne}
-  //                   </p>
-  //                   <p className={styles.adoptionQuestion}>First Name:</p>
-  //                   <p className={styles.adoptionAnswer}>{adoption.firstName}</p>
-  //                   <p className={styles.adoptionQuestion}>Last Name:</p>
-  //                   <p className={styles.adoptionAnswer}>{adoption.lastName}</p>
-  //                   <p className={styles.adoptionQuestion}>Email:</p>
-  //                   <p className={styles.adoptionAnswer}>{adoption.email}</p>
-  //                   <p className={styles.adoptionQuestion}>Phone number:</p>
-  //                   <p className={styles.adoptionAnswer}>{adoption.phone}</p>
-  //                   <p className={styles.adoptionQuestion}>
-  //                     Do you have a pet at home?
-  //                   </p>
-  //                   <p className={styles.adoptionAnswer}>
-  //                     {adoption.questionTwo}
-  //                   </p>
-  //                   <p className={styles.adoptionQuestion}>
-  //                     Do you have any experiences with cats/dogs?
-  //                   </p>
-  //                   <p className={styles.adoptionAnswer}>
-  //                     {adoption.questionThree}
-  //                   </p>
-  //                   <p className={styles.adoptionQuestion}>
-  //                     Do you live in a house or an apartment?
-  //                   </p>
-  //                   <p className={styles.adoptionAnswer}>
-  //                     {adoption.questionFour}
-  //                   </p>
-  //                   <p className={styles.adoptionQuestion}>Additional remarks?</p>
-  //                   <p className={styles.adoptionAnswer}>
-  //                     {adoption.additionalRemarks}
-  //                   </p>
-  //                   {/* <p>Posted by: {adoption.username}</p> */}
-  //                 </li>
-  //               ))}
-  //             </ul>
-  //           </>
-  //         ) : (
-  //           <h2> No adoption forms yet</h2>
-  //         )}
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
-  // ~~~
   return (
     <div className={styles['centeredContainer']}>
       {/* <h1>You are currently logged-in</h1> */}
@@ -153,7 +59,10 @@ export default async function UserProfilePage({ params }: Props) {
               </ul>
             </>
           ) : (
-            <h2 className={styles.text}> No bookings yet</h2>
+            <h2 className={styles['no-bookings']}>
+              {' '}
+              No bookings yet <br />
+            </h2>
           )}
         </div>
         <div>
@@ -203,7 +112,10 @@ export default async function UserProfilePage({ params }: Props) {
               </ul>
             </>
           ) : (
-            <h2 className={styles.text}> No adoption forms yet</h2>
+            <h2 className={styles['no-bookings']}>
+              {' '}
+              No adoption forms yet <br />
+            </h2>
           )}
         </div>
       </div>
