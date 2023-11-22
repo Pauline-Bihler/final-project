@@ -1,7 +1,7 @@
 import styles from './page.module.scss';
 
 export const metadata = {
-  title: 'Thank you | Kitties & Doggies of Austria',
+  title: 'Thank you | Kitties & Doggies of Graz',
   description: 'Adopt & support animals in need',
 };
 

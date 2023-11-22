@@ -14,7 +14,7 @@ import { LoginButton } from './LoginButton';
 const quicksand = Quicksand({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Kitties & Doggies of Austria',
+  title: 'Kitties & Doggies of Graz',
   description: 'Adopt & support animals in need',
 };
 
