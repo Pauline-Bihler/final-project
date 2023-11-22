@@ -30,7 +30,7 @@ export default function CatPage(props: GenerateMetadataProps) {
       <h1>{singleCat.name}</h1>
       <div className={styles['cat-content']}>
         <img
-          src={`/images/${singleCat.name}.jpg`}
+          src={`/images/${singleCat.name.toLowerCase()}.jpg`}
           alt={singleCat.name}
           width={250}
           height={350}

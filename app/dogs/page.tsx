@@ -23,7 +23,7 @@ export default async function DogsPage() {
                 {/* <Link href={`/dogs/${dog.id}`}>{dog.name}</Link> */}
                 <br />
                 <img
-                  src={`/images/${dog.name}.jpg`}
+                  src={`/images/${dog.name.toLowerCase()}.jpg`}
                   alt={dog.name}
                   width={250}
                   height={350}

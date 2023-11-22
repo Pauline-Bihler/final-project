@@ -24,7 +24,7 @@ export default async function CatsPage() {
                 {/* <Link href={`/cats/${cat.id}`}>{cat.name}</Link> */}
                 <br />
                 <img
-                  src={`/images/${cat.name}.jpg`}
+                  src={`/images/${cat.name.toLowerCase()}.jpg`}
                   alt={cat.name}
                   width={250}
                   height={350}

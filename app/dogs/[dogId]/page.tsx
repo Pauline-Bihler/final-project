@@ -31,7 +31,7 @@ export default function DogPage(props: GenerateMetadataProps) {
       <h1>{singleDog.name}</h1>
       <div className={styles['dog-content']}>
         <img
-          src={`/images/${singleDog.name}.jpg`}
+          src={`/images/${singleDog.name.toLowerCase()}.jpg`}
           alt={singleDog.name}
           width={250}
           height={350}
