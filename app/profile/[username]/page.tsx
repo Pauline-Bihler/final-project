@@ -6,6 +6,7 @@ import {
   getUserBySessionToken,
   getUserScheduleBySessionToken,
 } from '../../../database/users';
+// import DeleteButton from './DeleteButton';
 import styles from './page.module.scss';
 
 type Props = {
@@ -54,6 +55,12 @@ export default async function UserProfilePage({ params }: Props) {
                       Please enter the time you want to visit:
                     </p>
                     <p className={styles.answer}>{schedule.time}</p>
+                    {/* <DeleteButton
+                      scheduleId={schedule.scheduleId}
+                      userId={user.id}
+                      onDelete={() => {}}
+                    /> */}
+                    {/* <DeleteButton /> */}
                   </li>
                 ))}
               </ul>

@@ -22,3 +22,16 @@ export const createSchedule = cache(
     return schedule;
   },
 );
+
+export const deleteSchedule = cache(
+  async (scheduleId: number, userId: number) => {
+    const deletedSchedule = await sql<Schedule[]>`
+      DELETE FROM schedules
+      WHERE
+        id = ${scheduleId}
+        AND user_id = ${userId} RETURNING *
+    `;
+
+    return deletedSchedule;
+  },
+);

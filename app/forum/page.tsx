@@ -1,10 +1,10 @@
 // 'use client';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import { deletePost } from '../../database/posts';
+// import { deletePost } from '../../database/posts';
 import { getAllUserPosts, getUserBySessionToken } from '../../database/users';
 import CreatePostsForm from './CreatePostsForm';
-import styles from './forum.module.scss';
+// import styles from './forum.module.scss';
 import style from './page.module.scss';
 
 export const metadata = {
@@ -84,7 +84,7 @@ export default async function ForumPage() {
               </ul>
             </>
           ) : (
-            <h2> No posts yet</h2>
+            <h2 className={style['banner-text']}> No posts yet</h2>
           )}
         </div>
       </div>
