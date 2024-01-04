@@ -27,8 +27,6 @@ export default function AboutPage() {
         in need.
       </p>
 
-      {/* ... Other content ... */}
-
       <h2>Why Choose Kitties & Doggies of Graz:</h2>
       <p>
         Every animal at our shelter is treated with the utmost care and

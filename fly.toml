@@ -1,4 +1,4 @@
-app = "kitties-and-doggies-of-graz"
+app = "kitties-n-doggies-of-graz"
 primary_region = "otp"
 
 # Apps without volume: Comment out the [mounts] configuration below
